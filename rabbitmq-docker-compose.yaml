@@ -1,0 +1,16 @@
+version: '3'
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3.11.11-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      TZ: Asia/Shanghai
+      RABBITMQ_DEFAULT_USER: rabbit
+      RABBITMQ_DEFAULT_PASS: 123456
+    volumes:
+      - ./data:/var/lib/rabbitmq
+      #- ./conf:/etc/rabbitmq
+    # 先注释conf的挂载启动， 执行 docker cp rabbitmq:/etc/rabbitmq ./conf
