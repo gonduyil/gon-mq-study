@@ -12,5 +12,5 @@ services:
       RABBITMQ_DEFAULT_PASS: 123456
     volumes:
       - ./data:/var/lib/rabbitmq
-      #- ./conf:/etc/rabbitmq
+      - ./conf:/etc/rabbitmq
     # 先注释conf的挂载启动， 执行 docker cp rabbitmq:/etc/rabbitmq ./conf
